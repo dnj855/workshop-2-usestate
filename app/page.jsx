@@ -12,7 +12,7 @@ export default function Home() {
     shadow: 10,
   });
   return (
-    <main className="flex items-center justify-center m-auto max-w-4xl lg:flex-col gap-8 h-full">
+    <main className="flex items-center justify-center m-auto max-w-4xl gap-8 h-full">
       <ImageForm
         settings={settings}
         setSettings={setSettings}
