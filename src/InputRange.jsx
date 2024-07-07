@@ -1,6 +1,6 @@
 "use client";
 
-export const InputRange = ({ settings, setSetting, settingType }) => {
+export const InputRange = ({ settings, setSetting, settingType, disabled }) => {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex justify-between items-baseline">
@@ -15,10 +15,11 @@ export const InputRange = ({ settings, setSetting, settingType }) => {
         min={0}
         max={99}
         value={settings[settingType]}
-        className="range range-primary range-sm"
+        className={"range range-primary range-sm disabled:opacity-35"}
         onChange={(e) => {
           setSetting(settingType, e.target.value);
         }}
+        disabled={disabled}
       />
     </div>
   );

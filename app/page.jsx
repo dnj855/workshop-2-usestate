@@ -17,6 +17,7 @@ export default function Home() {
         settings={settings}
         setSettings={setSettings}
         setImage={setImage}
+        image={image}
       />
       <ImageCard image={image} settings={settings} />
     </main>

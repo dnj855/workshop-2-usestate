@@ -1,15 +1,14 @@
 "use client";
 
-import { useState } from "react";
 import { InputRange } from "./InputRange";
 
-export const ImageForm = ({ settings, setSettings, setImage }) => {
+export const ImageForm = ({ settings, setSettings, setImage, image }) => {
   const setSetting = (key, setting) => {
     const newSettings = { ...settings, [key]: setting };
     setSettings(newSettings);
   };
   return (
-    <div className="card bg-base-100 min-w-96 w-full shadow-xl">
+    <div className="card bg-base-100 min-w-96 max-w-xl shadow-xl">
       <div className="card-body">
         <h2 className="card-title mb-4">Settings</h2>
         <form className="flex flex-col gap-8">
@@ -44,16 +43,19 @@ export const ImageForm = ({ settings, setSettings, setImage }) => {
             settings={settings}
             setSetting={setSetting}
             settingType="padding"
+            disabled={!image.src}
           />
           <InputRange
             settings={settings}
             setSetting={setSetting}
             settingType="radius"
+            disabled={!image.src}
           />
           <InputRange
             settings={settings}
             setSetting={setSetting}
             settingType="shadow"
+            disabled={!image.src}
           />
         </form>
       </div>
