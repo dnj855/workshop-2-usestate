@@ -43,19 +43,19 @@ export const ImageForm = ({ settings, setSettings, setImage, image }) => {
             settings={settings}
             setSetting={setSetting}
             settingType="padding"
-            disabled={!image.src}
+            disabled={!image}
           />
           <InputRange
             settings={settings}
             setSetting={setSetting}
             settingType="radius"
-            disabled={!image.src}
+            disabled={!image}
           />
           <InputRange
             settings={settings}
             setSetting={setSetting}
             settingType="shadow"
-            disabled={!image.src}
+            disabled={!image}
           />
         </form>
       </div>

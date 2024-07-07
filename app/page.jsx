@@ -5,7 +5,7 @@ import { ImageForm } from "@/src/ImageForm";
 import { useState } from "react";
 
 export default function Home() {
-  const [image, setImage] = useState({});
+  const [image, setImage] = useState();
   const [settings, setSettings] = useState({
     padding: 10,
     radius: 10,

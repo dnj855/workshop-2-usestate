@@ -40,6 +40,7 @@ const CANVAS_SIZE = 400;
 
 export async function renderPNG({ image, settings }) {
   const scale = image.width / CANVAS_SIZE;
+
   const newSettings = {
     padding: settings.padding * scale,
     shadow: settings.shadow * scale,
@@ -49,13 +50,13 @@ export async function renderPNG({ image, settings }) {
   const svg = await satori(
     <ImageGenerator settings={newSettings} image={image} />,
     {
-      width: image.width + newSettings.shadow + newSettings.padding,
+      width: image.width,
     }
   );
 
   const messageData = await convertSVGToPNG?.({
     svg,
-    width: image.width + newSettings.shadow + newSettings.padding,
+    width: image.width,
   });
 
   return messageData;
